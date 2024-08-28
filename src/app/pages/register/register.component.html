@@ -1,0 +1,33 @@
+<section class="register-container">
+    <form class="form" [formGroup]="registrationForm" (submit)="submitRegistration()">
+        <h1>registration form</h1>
+        <div>
+            <span class="field-name">firstname</span>
+            <span *ngIf="formErrors.FirstName" class="field-error">{{formErrors.FirstName}}</span>
+            <input type="text" formControlName="FirstName">
+        </div>
+        <div>
+            <span class="field-name">lastname</span>
+            <span *ngIf="formErrors.LastName" class="field-error">{{formErrors.LastName}}</span>
+            <input type="text" formControlName="LastName">
+        </div>
+        <div>
+            <span class="field-name">username</span>
+            <span *ngIf="formErrors.UserName" class="field-error">{{formErrors.UserName}}</span>
+            <input type="text" formControlName="UserName">
+        </div>
+        <div>
+            <span class="field-name">email</span>
+            <span *ngIf="formErrors.Email" class="field-error">{{formErrors.Email}}</span>
+            <input type="email" formControlName="Email">
+        </div>
+        <div>
+            <span class="field-name">password</span>
+            <span *ngIf="formErrors.Password" class="field-error">{{formErrors.Password}}</span>
+            <input type="password" formControlName="Password">
+        </div>
+        <button type="submit">Register</button>
+        <a routerLink="/login">login ?</a>
+        <microsoft-login-button />
+    </form>
+</section>
